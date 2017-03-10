@@ -1,0 +1,18 @@
+body{
+	/*background-color: #34515E*/
+	background: url(../img/bg1.jpg) no-repeat center center fixed; 
+}
+.registerform{
+	width: 600px;
+    margin: 15px auto;
+}
+.regbtn{
+	width: 100%;
+    background-color: tomato;
+    color: white;
+}
+.loginbtn{
+	width: 100%;
+    background-color: yellowgreen;
+    color: white;
+}
