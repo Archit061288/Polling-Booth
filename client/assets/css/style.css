@@ -1,6 +1,6 @@
 body{
 	/*background-color: #34515E*/
-	background: url(../img/bg1.jpg) no-repeat center center fixed; 
+	background: url(../img/bg3.jpg) no-repeat center center fixed; 
 }
 .registerform{
 	width: 600px;
@@ -15,4 +15,29 @@ body{
 	width: 100%;
     background-color: yellowgreen;
     color: white;
+}
+.haserror{
+	border-color: #a94442 !important;
+}
+form .formpara{
+	padding: 2px;
+	color:#a94442 !important;
+}
+.loginbtn:hover{
+	color:white !important;
+}
+.regbtn:hover{
+	color:white !important;
+}
+.glyphicon-backward:before {
+	top: 2px;
+	content: "\e071";
+	position: relative;
+	left: 11px;
+}
+.pollbg{
+	background: url(../img/bg4.jpg) no-repeat center center fixed; 
+}
+.addbtn{
+	margin-bottom: 10px;
 }

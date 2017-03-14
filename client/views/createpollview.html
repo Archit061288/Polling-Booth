@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="container pollbg">
+		<h3 class="text-center">Add New Poll</h3>
+		<form name="formpoll">
+			<div class="row">
+			<div class="col-sm-12 col-md-12">
+				<div class="form-group">
+					<label for="question">Question</label>
+					<input type="text" class="form-control" name="question" ng-model="question" required>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-6">
+				<div class="form-group">
+					<label for="ch1">Choice-1</label>
+					<input type="text" class="form-control" name="ch1" ng-model="ch1" required>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-6">
+				<div class="form-group">
+					<label for="ch2">Choice-2</label>
+					<input type="text" class="form-control" name="ch2" ng-model="ch2" required>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-6">
+				<div class="form-group">
+					<label for="ch3">Choice-3</label>
+					<input type="text" class="form-control" name="ch3" ng-model="ch3" required>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-6" ng-show="ch4show">
+				<div class="form-group">
+					<label for="ch4">Choice-4</label>
+					<input type="text" class="form-control" name="ch4" ng-model="ch4">
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-12">
+				<button class="btn btn-primary addbtn" ng-click="createchoice()" ng-disabled="addchoice">Add New Choice</button>
+				<button type="submit" class="btn btn-success pull-right" ng-click="savepoll()" ng-disabled="formpoll.$invalid">Save</button>
+			</div>	
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-var UserModel  = require("../model/user_poll_model");
+var UserModel  = require("../model/user_poll_model").polllist;
 
 exports.createpoll = function(req,res){
 	var userdata = req.body

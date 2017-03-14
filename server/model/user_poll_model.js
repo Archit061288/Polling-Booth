@@ -8,4 +8,20 @@ var pollschema = mongoose.Schema({
 })
 
 
-module.exports = mongoose.model("poll_list",pollschema)
+polllist = mongoose.model("poll_list",pollschema)
+
+
+var userregisterSchema = mongoose.Schema({
+	name:String,
+	email:String,
+	username:String,
+	password:String,
+	token:String
+})
+
+
+userregister = mongoose.model("user_register",userregisterSchema)
+ module.exports = {
+ 	userregister: userregister,
+ 	polllist : polllist
+ }

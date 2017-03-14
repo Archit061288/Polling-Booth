@@ -1,4 +1,4 @@
-var app  = angular.module("app",['ui.router']);
+var app  = angular.module("app",['ui.router','toaster']);
 app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 $stateProvider
 	.state("register",{
@@ -10,6 +10,11 @@ $stateProvider
 		url:'/login',
 		templateUrl:'views/loginview.html',
 		controller:'loginctrl'
+	})
+	.state("createpoll",{
+		url:"/createpoll",
+		templateUrl:'views/createpollview.html',
+		controller:'createpollctrl'
 	})
 	.state('/',{
 		url:'/'

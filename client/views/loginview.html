@@ -6,26 +6,29 @@
 <body>
 
 <div class="container">
+	<toaster-container toaster-options="{'time-out': 2000}"></toaster-container>
 	<div class="panel panel-primary registerform">
 		<div class="panel-heading">
 			<div class="panel-title">Login</div>
 		</div>
 		<div class="panel-body">
-			<form class="">
+			<form class="" name="userform">
 			<div class="form-group">
-				<label for="username">Username</label>
-				<input type="text" id="username" class="form-control">
+				<label for="username">Email</label>
+				<input type="text" id="email" name="email" ng-class="{'haserror':userform.email.$dirty && userform.email.$invalid}" ng-model="email" class="form-control" ng-pattern="word" required>
+				<p class="formpara" ng-show="userform.email.$error.pattern">Enter a Valid Email</p>
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input type="text" id="password" class="form-control">
+				<input type="password" name="password" id="password" ng-model="password"  class="form-control" required>
 			</div>
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
-					<button class="btn btn-primary loginbtn">Login</button>		
+					<button class="btn loginbtn" ng-click="loginctrl()" ng-disabled="userform.$invalid">Login</button>		
+				
 				</div>
 				<div class="col-md-6 col-sm-6">
-				<button class="btn btn-default regbtn" ui-sref="register()">Register</button>
+				<button class="btn regbtn" ui-sref="register()">Register</button>
 				</div>
 			</div>	
 			</form>

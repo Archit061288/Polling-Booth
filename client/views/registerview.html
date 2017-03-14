@@ -5,35 +5,38 @@
 </head>
 <body>
 <div class="container">
+	<toaster-container toaster-options="{'time-out': 2000}"></toaster-container>
 	<div class="panel panel-primary registerform">
 		<div class="panel-heading">
-			<div class="panel-title">Sign Up</div>
+			<div class="panel-title">Sign Up <span style="cursor:pointer;" class="pull-right glyphicon glyphicon-backward" ui-sref="login()"> Login</span></div>
 		</div>
 		<div class="panel-body">
-	<form class="">
+	<form  method="post" name="userform" novalidate>
 		<div class="form-group">
 			<label for="name">Name</label>
-			<input type="text" id="name" class="form-control">
+			<input type="text" ng-class="{'haserror':userform.name.$dirty && userform.name.$invalid}" id="name" name="name" class="form-control" ng-model="name" required>
+			<p class="formpara" ng-show="userform.name.$dirty && userform.name.$invalid">Name is Required</p>
 		</div>
 		<div class="form-group">
 			<label for="email">Email</label>
-			<input type="text" id="email" class="form-control">
+			<input type="email" id="email" name="email" ng-class="{'haserror':userform.email.$dirty && userform.email.$invalid}" ng-model="email" class="form-control" ng-pattern="word" required>
+			<p class="formpara" ng-show="userform.email.$error.pattern">Enter a Valid Email</p>
+
 		</div>
 		<div class="form-group">
 			<label for="uname">Username</label>
-			<input type="text" id="uname" class="form-control">
+			<input type="text" id="username" name="username" ng-class="{'haserror':userform.username.$dirty && userform.username.$invalid}" ng-model="username" class="form-control" required>
+			<p class="formpara" ng-show="userform.username.$dirty && userform.username.$invalid">Username is required.</p>
 		</div>
 		<div class="form-group">
 			<label for="password">Password</label>
-			<input type="text" id="password" class="form-control">
-		</div>
-		<div class="form-group">
-			<label for="cpassword">Confirm Password</label>
-			<input type="text" id="cpassword" class="form-control">
+			<input type="password" id="password" name="password" ng-model="password" ng-minlength="3" ng-maxlength="6" ng-class="{'haserror':userform.password.$dirty && userform.password.$invalid}" class="form-control" required>
+			<p class="formpara" ng-show="userform.password.$error.minlength">Password is too short.</p>
+			<p class="formpara" ng-show="userform.password.$error.maxlength">Password is too long.</p>
 		</div>
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
-				<button class="btn btn-default regbtn" ui-sref="login()">Save</button>
+				<button  type="submit" class="btn regbtn" ng-click="registeruser()" ng-disabled="userform.$invalid">Save</button>
 			</div>
 			
 		</div>
